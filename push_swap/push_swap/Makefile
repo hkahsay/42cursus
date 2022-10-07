@@ -1,5 +1,5 @@
 
-NAME =		push_swap
+NAME = push_swap
 SRCS = *.c
 
 INCLUDE	=	include	
@@ -10,31 +10,36 @@ OBJS = ${SRCS:.c=.o}
 RM = rm -f
 
 CC =		gcc
-CFLAGS = 			-Wall -Wextra -Werror 
+CFLAGS = 			-Wall -Wextra -Werror -g -fsanitize=address
 
-.c.o:		
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+# .c.o:		
+# 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 #$(NAME):	${OBJS} $(LIBFT) $(PRINT) push_swap
 			
 
-all:		$(NAME)
+# $(LIBFT): 
+# 		make -C ft_print/libft
 
-$(NAME):  $(LIBFT) $(PRINT)
-		$(CC) $(CFLAG) $(SRCS) ${OBJS} $(LIBFT) $(PRINT) -o $(NAME)
+# $(PRINT):
+# 		make -C ft_print/libftprintf
+all:	$(NAME)
 
-$(LIBFT): 
-		make -C ft_print/libft
-
-$(PRINT):
-		make -C ft_print/libftprintf
+$(NAME):
+		$(MAKE) -C ./ft_print/libft 
+		$(MAKE) -C ./ft_print
+		$(CC) $(SRCS) $(LIBFT) $(PRINT) $(CFLAG) -o $(NAME)
 
 
 clean:		
-			rm -f ${OBJS}
+			${RM} ${OBJS}
+			make clean -C ./ft_print/libft
+			make clean -C ./ft_print
 
 fclean:		clean
-			rm -f 
+					${RM} $(NAME)
+					make fclean -C ./ft_print/libft 
+					make fclean -C ./ft_print
 
 re:			fclean all
 

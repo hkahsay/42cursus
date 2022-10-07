@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 15:06:39 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/05 20:02:08 by hkahsay          ###   ########.fr       */
+/*   Created: 2022/09/30 16:43:33 by hkahsay           #+#    #+#             */
+/*   Updated: 2022/10/05 14:45:39 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"push_swap.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+void	ft_putchar(char c)
 {
-	if (!s)
-		return ;
-	write (fd, s, ft_strlen(s));
+	write (1, &c, 1);
 }

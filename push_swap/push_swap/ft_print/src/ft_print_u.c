@@ -6,14 +6,14 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 10:31:03 by hkahsay           #+#    #+#             */
-/*   Updated: 2021/12/28 18:22:37 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/05 20:02:47 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(const char *str)
 {
 	int	i;
 

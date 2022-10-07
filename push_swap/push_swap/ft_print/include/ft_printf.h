@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 16:26:16 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/01/03 16:36:48 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/05 19:58:51 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int		ft_printf(const char *str, ...);
 int		ft_printchar(int c);
 int		ft_formats(va_list args, const char format);
-void	ft_putstr(char *str);
+void	ft_putstr(const char *str);
 int		ft_printstr(char *str);
 int		ft_printnbr(int n);
 int		ft_printpercent(void);

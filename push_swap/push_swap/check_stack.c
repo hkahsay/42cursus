@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:11:12 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/03 20:11:09 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/05 19:59:55 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,59 @@
 // #include<stdio.h>
 // #include<unistd.h>
 
-void	print_error(void)
+long long int	check_only_number(char *str)
 {
-	ft_putstr("Error\n");
-	return ;
+	int				i;
+	int				sign;
+	long long int	value;
+
+	while (str[i] == ' ' || str[i] >= '\t' && str[i] <= '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		check_error(str, i);
+		if (str[i++] == '-')
+			sign *= -1;
+	}
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0 || ft_strlen(str) > 12)
+			print_error ();
+		value += str[i] - 48;
+		i++;
+	}
+	check_max_min(value, sign);
+	return (value * sign);
 }
 
-int	check_only_number(int argc, char **argv)
+void	check_error(char *str, int i)
 {
-	int	i;
-	int	j;
+	if (ft_isdigit(str[i + 1]) == 0)
+		print_error();
+}
 
-	i = 1;
-	while (i < argc)
+void	check_max_min(long long int value, int sign)
+{
+	if (((value * sign) > MAX_INT) || ((value * sign) < MAX_INT))
+		print_error();
+}
+
+int	check_doubles(t_stack *stack)
+{
+	t_node	*dup;
+	t_node	*temp;
+
+	dup = stack->a_tail;
+	while (dup && dup->next)
 	{
-		j = 0;
-		if (!ft_isdigit(argv[i][j]))
-			return (0);
-		while (ft_isdigit(argv[i][j]))
-			j++;
-		i++;
+		temp = dup->next;
+		while (temp != NULL)
+		{
+			if (dup->x == temp->x)
+				print_error();
+			temp = temp->next;
+		}
+	dup = dup->next;
 	}
 	return (0);
 }
-
-// int	check_doubles(t_stack *a, int x)
-// {
-	
-// }
-
-
