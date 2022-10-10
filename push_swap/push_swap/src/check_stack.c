@@ -6,11 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:11:12 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/05 19:59:55 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 16:56:41 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 // #include<string.h>
 // #include<stdarg.h>
 // #include<stdio.h>
@@ -22,7 +22,10 @@ long long int	check_only_number(char *str)
 	int				sign;
 	long long int	value;
 
-	while (str[i] == ' ' || str[i] >= '\t' && str[i] <= '\r')
+	value = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -33,8 +36,9 @@ long long int	check_only_number(char *str)
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0 || ft_strlen(str) > 12)
-			print_error ();
-		value += str[i] - 48;
+			print_error();
+		value *= 10;
+		value += str[i] - '0';
 		i++;
 	}
 	check_max_min(value, sign);
@@ -49,7 +53,7 @@ void	check_error(char *str, int i)
 
 void	check_max_min(long long int value, int sign)
 {
-	if (((value * sign) > MAX_INT) || ((value * sign) < MAX_INT))
+	if (((value * sign) > MAX_INT) || ((value * sign) < MIN_INT))
 		print_error();
 }
 
@@ -65,7 +69,10 @@ int	check_doubles(t_stack *stack)
 		while (temp != NULL)
 		{
 			if (dup->x == temp->x)
+			{
+				printf("happy\n");
 				print_error();
+			}
 			temp = temp->next;
 		}
 	dup = dup->next;

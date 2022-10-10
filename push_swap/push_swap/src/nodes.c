@@ -6,16 +6,16 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:39:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/07 12:50:49 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:46:48 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include<string.h>
-#include<stdarg.h>
-#include<stdio.h>
-#include<unistd.h>
-#include<stdlib.h>
+#include "../push_swap.h"
+// #include<string.h>
+// #include<stdarg.h>
+// #include<stdio.h>
+// #include<unistd.h>
+// #include<stdlib.h>
 
 void	init_node(t_node **tail, t_node **head, int value)
 {
@@ -70,7 +70,6 @@ void	remove_node(t_node *node)
 	node = NULL;
 }
 
-
 // int	main(void)
 // {
 // 	t_node	*tail;
@@ -99,18 +98,18 @@ void	remove_node(t_node *node)
 // 	return (0);
 // }
 
-int	main(int argc, char **argv)
-{
-	t_stack	*stack;
+// int	main(int argc, char **argv)
+// {
+// 	t_stack	*stack;
 
-	stack = NULL;
-	if (argc >= 2)
-	{
-		stack = ft_init(stack);
-		check_doubles(stack);
-		pa(stack);
-	}
-	else
-		return (0);
-	return (0);
-}
+// 	stack = NULL;
+// 	if (argc >= 2)
+// 	{
+// 		stack = ft_init(stack);
+// 		check_doubles(stack);
+// 		pa(stack);
+// 	}
+// 	else
+// 		return (0);
+// 	return (0);
+// }

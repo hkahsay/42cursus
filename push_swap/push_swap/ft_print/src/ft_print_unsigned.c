@@ -6,11 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:49:16 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/01/03 16:31:03 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:57:01 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_num_len(unsigned int num)
 {

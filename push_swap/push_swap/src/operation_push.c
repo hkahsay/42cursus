@@ -6,11 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:41:59 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/07 11:24:27 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:23:54 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "../push_swap.h"
 
 void	pa(t_stack *stack)
 {

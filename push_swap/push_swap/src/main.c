@@ -6,13 +6,13 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:20:52 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/07 16:03:15 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 17:02:04 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	*ft_init(t_stack *stack)
+t_stack	*init_stack(t_stack *stack)
 {
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
@@ -30,12 +30,13 @@ t_stack	*ft_init(t_stack *stack)
 
 t_stack	*put_in_stack(t_stack *stack, int value)
 {
-	insert_begnning(&stack->a_tail, stack->a_tail->x);
+	insert_begnning(&stack->a_tail, value);
 	stack->a_len_box++;
 	return (stack);
 }
+////split_for_stack
 
-void	split_stack(t_stack *stack, char **digit)
+void	fill_stack(t_stack *stack, char **digit)
 {
 	int	i;
 	int	j;
@@ -50,21 +51,58 @@ void	split_stack(t_stack *stack, char **digit)
 				check_only_number(digit[j]));
 		}
 		else
-			stack = put_in_stack(stack, check_only_number);
+			stack = put_in_stack(stack, check_only_number(digit[j]));
 	}
-	while (dijit[i])
+	while (digit[i])
 	{
 		free(digit[i]);
 		free(digit);
 	}	
 }
 
-// void	check_arg(t_stack *stack, char **argv, int argc)
-// {
+//check_arg ..split argument
 
-// }
+void	parsing(t_stack *stack, char **argv, int argc)
+{
+	int		i;
+	char	**digit;
 
-// int	main(int	argc, char	**argv)
-// {
+	i = 0;
+	while (argv[++i])
+	{
+		if (argc == 2)
+		{
+			digit = ft_split(argv[i], ' ');
+			fill_stack(stack, digit);
+		}
+		else
+		{
+			if (i == 1)
+				init_node(&stack->a_tail, &stack->a_head,
+					check_only_number(argv[i]));
+			else
+				stack = put_in_stack(stack, check_only_number(argv[i]));
+		}
+	}
+}
 
-// }
+int	main(int argc, char **argv)
+{
+	t_stack	*stack;
+
+	stack = NULL;
+	if (argc >= 2)
+	{
+		stack = init_stack(stack);
+		parsing(stack, argv, argc);
+		check_doubles(stack);
+		while (stack->a_head)
+		{
+			printf("print list : [%d]\n", stack->a_head->x);
+			stack->a_head = stack->a_head->prev;
+		}
+	}
+	else
+		return (0);
+	return (0);
+}

@@ -1,46 +1,59 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/10 15:27:55 by hkahsay           #+#    #+#              #
+#    Updated: 2022/10/10 15:49:26 by hkahsay          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = push_swap
-SRCS = *.c
+NAME =	push_swap
 
-INCLUDE	=	include	
-LIBFT = ./ft_print/libft/libft.a
-PRINT  = ./ft_print/libftprintf.a
+SRCS =	src/main.c \
+		src/check_stack.c \
+		src/exit.c \
+		src/nodes.c \
+		src/operation_push.c \
+		src/operation_rev_rotate.c \
+		src/operation_rotate.c \
+		src/operation_swap.c \
+		src/ft_putstr.c \
+		src/ft_putchar.c
+		
 
-OBJS = ${SRCS:.c=.o}
-RM = rm -f
+LIBFT_DIR = libft
+LIBFT = /libft/libft.a
 
-CC =		gcc
-CFLAGS = 			-Wall -Wextra -Werror -g -fsanitize=address
+PRINT_DIR = ft_print/
+PRINT  = /ft_print/src/libftprintf.a
 
-# .c.o:		
-# 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+OBJS	=	$(SRCS:.c=.o)
+CC		=	gcc
+RM		=	rm -f
 
-#$(NAME):	${OBJS} $(LIBFT) $(PRINT) push_swap
-			
+DEBUG	=	-fsanitize=address -g
+CFLAGS	=	-Wall -Wextra -Werror
+INCLUDE	=	-L $(LIBFT_DIR) -lft -L $(PRINT_DIR) -lftprintf
 
-# $(LIBFT): 
-# 		make -C ft_print/libft
-
-# $(PRINT):
-# 		make -C ft_print/libftprintf
 all:	$(NAME)
 
-$(NAME):
-		$(MAKE) -C ./ft_print/libft 
-		$(MAKE) -C ./ft_print
-		$(CC) $(SRCS) $(LIBFT) $(PRINT) $(CFLAG) -o $(NAME)
-
+$(NAME):	$(OBJS)
+			$(MAKE) -C $(LIBFT_DIR)
+			$(MAKE) -C $(PRINT_DIR)
+			$(CC) $(OBJS) $(CFLAGS) $(DEBUG) $(INCLUDE) -o $(NAME)
 
 clean:		
 			${RM} ${OBJS}
-			make clean -C ./ft_print/libft
-			make clean -C ./ft_print
+			make clean -C $(LIBFT_DIR)
+			make clean -C $(PRINT_DIR)
 
 fclean:		clean
-					${RM} $(NAME)
-					make fclean -C ./ft_print/libft 
-					make fclean -C ./ft_print
+			${RM} $(NAME)
+			make fclean -C $(LIBFT_DIR)
+			make fclean -C $(PRINT_DIR)
 
 re:			fclean all
-
 .PHONY:		all clean fclean re  

@@ -6,12 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:09:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/01/03 16:35:05 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:58:33 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../include/ft_printf.h"
 
 int	ft_ptr_len(uintptr_t num)
 {

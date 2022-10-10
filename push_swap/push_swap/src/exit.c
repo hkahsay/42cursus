@@ -6,16 +6,16 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:26:15 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/05 19:27:43 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 16:37:31 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "../push_swap.h"
 
 void	print_error(void)
 {
 	ft_putstr("Error\n");
-	return ;
+	exit(0);
 }
 
 int	is_sorted(t_stack *stack)

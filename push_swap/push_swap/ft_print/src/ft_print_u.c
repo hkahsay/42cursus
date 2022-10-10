@@ -6,12 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 10:31:03 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/05 20:02:47 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:58:34 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../include/ft_printf.h"
 
 void	ft_putstr(const char *str)
 {

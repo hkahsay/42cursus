@@ -6,12 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 16:17:49 by hkahsay           #+#    #+#             */
-/*   Updated: 2021/12/28 17:41:55 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:58:31 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../include/ft_printf.h"
 
 int	ft_len_hex(unsigned int num)
 {

@@ -1,33 +1,26 @@
-NAME =		libftprintf.a
-SRCS = src/ft_printf.c\
+NAME = libftprintf.a
+SRCS =	src/ft_printf.c\
 		src/ft_print_u.c\
 		src/ft_print_ptr.c\
 		src/ft_print_hex.c\
 		src/ft_print_unsigned.c\
 
-INCLUDE	=	include	
-LIBFT = libft
-
+CFLAGS = -Wall -Wextra -Werror
 OBJS = ${SRCS:.c=.o}
+AR = ar rc
+RM = rm -f
+LIBFT_PATH = $(PARENT_DIR)
 
-CC =		gcc
-CFLAGS = 			-Wall -Wextra -Werror 
+all: ${NAME}
 
-.c.o:		
-			${CC} ${CFLAGS} -I $(INCLUDE) -c $< -o ${<:.c=.o}
+${NAME}: ${OBJS}
+	${AR} ${NAME} ${OBJS}
 
-$(NAME):	${OBJS}
-			$(MAKE) -C $(LIBFT)
-			cp $(LIBFT)/$(LIBFT).a $(NAME)
-			ar rcs ${NAME} ${OBJS}
-all:		${NAME} 			
+clean:
+	${RM} ${OBJS}
 
-clean:		
-			rm -f ${OBJS}
-
-fclean:		clean
-			rm -f ${NAME}
-
-re:			fclean all
-
-.PHONY:		all clean fclean re
+fclean: clean
+	${RM} ${NAME}
+	
+re: fclean all
+.PHONY: all clean fclean re

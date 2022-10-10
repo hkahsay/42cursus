@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 16:44:41 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/09/30 16:44:55 by hkahsay          ###   ########.fr       */
+/*   Created: 2022/09/30 16:43:33 by hkahsay           #+#    #+#             */
+/*   Updated: 2022/10/10 15:40:45 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "../push_swap.h"
 
-void	ft_putstr(char const *s)
+void	ft_putchar(char c)
 {
-	while (s != NULL && *s)
-		ft_putchar(*s++);
+	write (1, &c, 1);
 }

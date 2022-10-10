@@ -6,11 +6,11 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:40:11 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/01/03 14:45:48 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:56:40 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_printchar(int c)
 {

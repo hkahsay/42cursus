@@ -6,14 +6,14 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:08:58 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/07 12:51:06 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/10 14:52:02 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_print/libft/libft.h"
+# include "libft/libft.h"
 # include "ft_print/include/ft_printf.h"
 // # include"ft_printf.h"
 // # include"get_next_line.h"
@@ -56,7 +56,7 @@ void			remove_node(t_node *node);
 void			init_node(t_node **tail, t_node **head, int value);
 // void			ft_putstr(char const *s);
 void			ft_putchar(char c);
-t_stack			*ft_init(t_stack *stack);
+t_stack			*init_stack(t_stack *stack);
 
 //checkers
 void			print_error(void);
@@ -73,5 +73,9 @@ void			pa(t_stack *stack);
 void			pb(t_stack *stack);
 void			ra(t_stack *stack);
 void			rb(t_stack *stack);
+//parsing
+t_stack			*put_in_stack(t_stack *stack, int value);
+void			fill_stack(t_stack *stack, char **digit);
+void			parsing(t_stack *stack, char **argv, int argc);
 
 #endif
