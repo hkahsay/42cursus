@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:08:58 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/10 14:52:02 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/12 13:02:35 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,25 @@ void			pa(t_stack *stack);
 void			pb(t_stack *stack);
 void			ra(t_stack *stack);
 void			rb(t_stack *stack);
+void			rra(t_stack *stack);
+void			rrb(t_stack *stack);
+void			rrr(t_stack *stack);
 //parsing
 t_stack			*put_in_stack(t_stack *stack, int value);
 void			fill_stack(t_stack *stack, char **digit);
 void			parsing(t_stack *stack, char **argv, int argc);
+//sorting
+void			sort_2(t_stack *stack);
+void			sort_3(t_stack	*stack);
+void			sort_4(t_stack *stack);
+void			if_3_for_5(t_stack *stack);
+void			sort_5(t_stack *stack);
+void			radix(t_stack *stack);
+//freeing memory
+void			deallocate(t_node **tail, t_node **head);
+void			free_sorted_stack(t_stack *stack);
+
+//
+void			push_swap(t_stack *stack);
 
 #endif

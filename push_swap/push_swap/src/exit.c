@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:26:15 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/10 16:37:31 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:39:04 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	deallocate(t_node **tail, t_node **head)
 	*head = NULL;
 }
 
-void	free_stack_sorted(t_stack *stack)
+void	free_sorted_stack(t_stack *stack)
 {
 	int	i;
 

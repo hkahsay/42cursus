@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:41:59 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/10 15:23:54 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/12 12:40:59 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	pa(t_stack *stack)
 	if (!stack->a_tail)
 		init_node(&stack->a_tail, &stack->a_head, stack->b_tail->x);
 	else
+	{
 		insert_begnning(&stack->b_tail, stack->b_tail->x);
+		printf("hello%d\n", stack->a_head->x);
+	}
 	stack->b_tail = stack->b_tail->next;
 	if (stack->b_tail == NULL)
 		stack->b_head = NULL;

@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:11:12 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/10 16:56:41 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/11 15:31:41 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,7 @@ int	check_doubles(t_stack *stack)
 		while (temp != NULL)
 		{
 			if (dup->x == temp->x)
-			{
-				printf("happy\n");
 				print_error();
-			}
 			temp = temp->next;
 		}
 	dup = dup->next;
