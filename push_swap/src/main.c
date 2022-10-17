@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:20:52 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/15 15:47:28 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:38:25 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ int	main(int argc, char **argv)
 		stack = init_stack(stack);
 		parsing(stack, argv, argc);
 		check_doubles(stack);
-		simplify(stack);
-		push_swap(stack);
-		free_sorted_stack(stack);
+		// simplify(stack);
+		// push_swap(stack);
+		// free_sorted_stack(stack);
+		while (stack->a_tail)
+		{
+			printf("print list : [%d]\n", stack->a_tail->x);
+			stack->a_tail = stack->a_tail->next;
+		}
 	}
 	else
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:56:14 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/14 18:18:33 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:51:33 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,13 @@ void	copy_sort_to_b(t_stack *stack)
 				j = temp->x;
 				temp->x = temp->next->x;
 				temp->next->x = j;
+				printf("stackb %d\n\n", temp->x);
 			}
 			temp = temp->next;
 		}
+		printf("stacka %d\n", temp->x);
 		i--;
-	}	
+	}
 }
 
 void	copy_to_stack_b(t_stack *stack)

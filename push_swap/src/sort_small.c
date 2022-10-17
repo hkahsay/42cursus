@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:41:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/10/14 17:36:46 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:38:57 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,10 @@ void	sort_5(t_stack *stack)
 {
 	while (stack->a_tail->x == 2 || stack->a_tail->x == 3
 		|| stack->a_tail->x == 4)
+	{
 		ra(stack);
+		printf("ra sort5%d\n", stack->x);
+	}
 	pb(stack);
 	while (stack->a_tail->x == 2 || stack->a_tail->x == 3
 		|| stack->a_tail->x == 4)
@@ -96,7 +99,10 @@ void	sort_5(t_stack *stack)
 	pb(stack);
 	if_3_for_5(stack);
 	if (stack->b_tail->x < stack->b_tail->next->x)
+	{
 		sb(stack);
+		printf("sb sort5%d\n", stack->x);
+	}
 	pa(stack);
 	pa(stack);
 }
