@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:33:30 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/11/08 12:00:00 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:43:43 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*ft_read_file(int fd, char *result)
 	while (byte_read > 0)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
-		if (byte_read == -1 )
+		if (byte_read == -1)
 		{
 			free(buffer);
 			return (NULL);

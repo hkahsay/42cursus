@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:42:12 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/11/11 15:53:02 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/11/29 11:58:18 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	count_coin(t_data *data)
 		}
 		data->row++;
 	}
-	//printf("num of coins :%d\n", data->coin_count);
+	printf("%d\n", data->coin_count);
 	return (data->coin_count);
 }
 
@@ -44,7 +44,7 @@ int	check_coin(t_data *data)
 	if (count_coin(data) == 0)
 		exit_game(data);
 	else
-		printf("eat all coins");
+		ft_printf("eat all coins");
 	return (0);
 }
 
@@ -70,13 +70,13 @@ char	*get_player(char **map, t_data *data, char p)
 		}
 		row++;
 	}
-	return (0);
+	return (NULL);
 }
 
 int	key_words(int keycode, t_data *data)
 {
 	get_player(data->map, data, 'P');
-	if (keycode == KEY_A && data->map[data->row][data->col - 1] == 'E')
+	if (keycode == KEY_A && (data->map[data->row][data->col - 1]) == 'E')
 		check_coin(data);
 	else if (keycode == KEY_A)
 		move_left(data);
@@ -87,11 +87,11 @@ int	key_words(int keycode, t_data *data)
 	if (keycode == KEY_S && data->map[data->row + 1][data->col] == 'E')
 		check_coin(data);
 	else if (keycode == KEY_S)
-		move_up(data);
+		move_down(data);
 	if (keycode == KEY_W && data->map[data->row - 1][data->col] == 'E')
 		check_coin(data);
 	else if (keycode == KEY_W)
-		move_down(data);
+		move_up(data);
 	if (keycode == KEY_ESC)
 		end_game(data);
 	return (0);

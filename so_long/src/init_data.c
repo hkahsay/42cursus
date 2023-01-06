@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 17:20:52 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/11/11 15:54:46 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:32:47 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ t_data	*init_data(void)
 	data->img_ptr = NULL;
 	data->mlx_ptr = NULL;
 	data->win_mlx = NULL;
+	data->coin = NULL;
+	data->player = NULL;
+	data->floor = NULL;
+	data->map = NULL;
+	data->ptr = NULL;
 	data->p = 0;
 	data->e = 0;
 	data->c = 0;
 	data->moves = 0;
-	data->coin = NULL;
-	data->player = NULL;
-	data->wall = NULL;
-	data->floor = NULL;
-	data->map = NULL;
-	data->ptr = NULL;
 	return (data);
 }
 

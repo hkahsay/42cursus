@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:19:35 by hkahsay           #+#    #+#             */
-/*   Updated: 2022/11/11 15:55:04 by hkahsay          ###   ########.fr       */
+/*   Updated: 2022/11/15 21:41:24 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ void	move_left(t_data *data);
 void	move_right(t_data *data);
 void	move_up(t_data *data);
 void	move_down(t_data *data);
+void	check_must(t_data *data);
 #endif
